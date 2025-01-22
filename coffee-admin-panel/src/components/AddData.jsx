@@ -172,7 +172,7 @@ const AddData = ({ type }) => {
                 onChange={handleChange}
               />
             </label>
-            <label>
+            <div>
               Ingredients:
               <div className="ingredient-selection-table">
                 <table>
@@ -205,7 +205,7 @@ const AddData = ({ type }) => {
                   </tbody>
                 </table>
               </div>
-            </label>
+            </div>
           </>
         )}
         <button type="submit">
