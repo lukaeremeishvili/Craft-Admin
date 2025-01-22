@@ -188,14 +188,14 @@ const AddData = ({ type }) => {
                     {ingredients.map((ingredient) => (
                       <tr key={ingredient._uuid}>
                         <td>
-                          <input
+                          <label><input
                             type="checkbox"
                             value={ingredient.name}
                             checked={formData.selectedIngredients.includes(
                               ingredient.name
                             )}
                             onChange={handleIngredientChange}
-                          />
+                          /></label>
                         </td>
                         <td>{ingredient.name}</td>
                         <td>{ingredient.price}</td>
