@@ -18,7 +18,7 @@
   margin-bottom: 20px;
 }
 
-.add-button {
+.addButton {
   padding: 10px 20px;
   background-color: #598eda;
   color: white;
@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 
-.table-container {
+.tableContainer {
   flex-grow: 1;
   background-color: white;
   border-radius: 8px;
@@ -47,8 +47,8 @@ td {
   border-bottom: 1px solid #ddd;
 }
 
-.edit-button,
-.delete-button {
+.editButton,
+.deleteButton {
   padding: 5px 10px;
   margin: 0 5px;
   cursor: pointer;
@@ -56,12 +56,12 @@ td {
   border: none;
 }
 
-.edit-button {
+.editButton {
   background-color: #ffa500;
   color: white;
 }
 
-.delete-button {
+.deleteButton {
   background-color: #f44336;
   color: white;
 }

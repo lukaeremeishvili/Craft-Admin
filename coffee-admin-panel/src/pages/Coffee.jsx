@@ -1,7 +1,7 @@
-import React, { useContext, useState } from "react";
+import  { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DataContext } from "../context/DataContext";
-import "./Style.css";
+import styles from "./Style.module.css"; 
 
 const Coffee = () => {
   const { coffee, handleDeleteCoffee } = useContext(DataContext);
@@ -35,14 +35,16 @@ const Coffee = () => {
   };
 
   return (
-    <div className="page">
-      <div className="header">
+    <div className={styles.page}>
+      {" "}
+
+      <div className={styles.header}>
         <h1>Coffee Page</h1>
-        <button className="add-button" onClick={handleAddCoffee}>
+        <button className={styles.addButton} onClick={handleAddCoffee}>
           Add Coffee
         </button>
       </div>
-      <div className="table-container">
+      <div className={styles.tableContainer}>
         <table>
           <thead>
             <tr>
@@ -63,7 +65,7 @@ const Coffee = () => {
                 <td>{coffee.totalPrice}</td>
                 <td>
                   <button
-                    className="edit-button"
+                    className={styles.editButton}
                     onClick={() => handleEditCoffee(coffee._uuid)}
                   >
                     Edit
@@ -71,7 +73,7 @@ const Coffee = () => {
                 </td>
                 <td>
                   <button
-                    className="delete-button"
+                    className={styles.deleteButton} 
                     onClick={() => handleDeleteCoffee(coffee._uuid)}
                   >
                     Delete
@@ -82,7 +84,7 @@ const Coffee = () => {
           </tbody>
         </table>
       </div>
-      <div className="pagination">
+      <div className={styles.pagination}>
         <button onClick={handlePreviousPage}>Previous</button>
         <span>
           Page {currentPage}/{totalPages}

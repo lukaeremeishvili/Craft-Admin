@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useNavigate, useParams } from "react-router-dom";
 import { DataContext } from "../context/DataContext";
-import "./Data.css";
+import styles from "./Data.module.css";
 
 const EditData = ({ type }) => {
   const navigate = useNavigate();
@@ -94,20 +94,20 @@ const EditData = ({ type }) => {
         },
         0
       );
-      const basePrice = 2; 
+      const basePrice = 2;
       const totalPrice = basePrice + ingredientPrices;
       const coffeePayload = {
         ...formData,
         totalPrice: `₾${totalPrice.toFixed(2)}`,
       };
-      console.log("Payload:", coffeePayload); 
+      console.log("Payload:", coffeePayload);
       await handleUpdateCoffee(id, coffeePayload);
     }
     navigate(`/admin/${type}`);
   };
 
   return (
-    <div className="edit-data-page">
+    <div className={styles.addDataPage}>
       <h1>Edit {type === "ingredients" ? "Ingredient" : "Coffee"}</h1>
       <form onSubmit={handleSubmit}>
         {type === "ingredients" ? (
@@ -187,9 +187,9 @@ const EditData = ({ type }) => {
                 onChange={handleChange}
               />
             </label>
-            <label>
+            <div>
               Ingredients:
-              <div className="ingredient-selection-table">
+              <div className={styles.ingredientSelectionTable}>
                 <table>
                   <thead>
                     <tr>
@@ -220,7 +220,7 @@ const EditData = ({ type }) => {
                   </tbody>
                 </table>
               </div>
-            </label>
+            </div>
           </>
         )}
         <button type="submit">Save Changes</button>
